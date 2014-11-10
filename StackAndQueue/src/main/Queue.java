@@ -1,5 +1,9 @@
 package main;
 
-public class Queue {
+public class Queue<E> {
+	
+	public void enqueue (E element){
+		
+	}
 
 }
