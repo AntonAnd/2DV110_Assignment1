@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.fail;
+import main.Stack;
 
 import org.junit.Test;
 
