@@ -13,11 +13,11 @@ public class QueueClass<E> {
 	
 	/*Enqueue an element*/
 	public void enqueue(E element){
-		
+		queue.add(element);
 	}
 	
 	/*Returns the first element in the queue*/
 	public E peek(){
-		return null;
+		return queue.peek();
 	}
 }

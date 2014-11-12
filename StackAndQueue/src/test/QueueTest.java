@@ -11,7 +11,7 @@ public class QueueTest<E> {
 
 	@Test
 	public void testEnqueueString(){
-		QueueClass<String> q = new QueueClass<>();
+		QueueClass<String> q = new QueueClass<String>();
 		String input = "test";
 		q.enqueue(input);
 		String expected = q.peek();
