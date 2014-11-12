@@ -13,21 +13,18 @@ public class StackTest {
 	}
 
 	@Test
-	public void shouldPushStringWithOutError() {
+	public void shouldPushStringWithoutError() {
 		Stack<String> s = new Stack<String>();
 		s.push("Test");
 	}
 
 	@Test
-	public void pushShouldThrowIllegalArgumentException() {
+	public void pushNullShouldThrowIllegalArgumentException() {
 		Stack<String> s = new Stack<String>();
 		try {
 			s.push(null);
 			fail("Should throw IllegalArgumentException");
-
 		} catch (IllegalArgumentException e) {
-
 		}
-
 	}
 }
