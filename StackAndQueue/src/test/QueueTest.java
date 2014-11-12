@@ -1,20 +1,14 @@
 package test;
 
-import java.util.LinkedList;
-import java.util.List;
+import static org.junit.Assert.*;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class QueueTest<E> {
+public class QueueTest {
 
 	@Test
-	public void shouldReturnAddedElement(E element) {
-		List<E> queue = new LinkedList<>();
-		queue.add(element);
-		
-		E expected = queue.get(0);
-		Assert.assertEquals(expected, element);
+	public void test() {
+		fail("Not yet implemented");
 	}
 
 }
