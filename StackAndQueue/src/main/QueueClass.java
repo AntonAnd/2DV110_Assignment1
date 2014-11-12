@@ -22,6 +22,6 @@ public class QueueClass<E> {
 	}
 	
 	public E dequeue() {
-		return null;
+		return queue.poll();
 	}
 }
