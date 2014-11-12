@@ -10,4 +10,10 @@ public class StackTest {
 	public void shouldCreateInstance() {
 		new Stack();
 	}
+
+	@Test
+	public void shouldPushString() {
+		Stack s = new Stack();
+		s.push("Test");
+	}
 }
