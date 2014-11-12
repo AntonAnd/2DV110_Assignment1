@@ -1,13 +1,13 @@
 package test;
 
-import static org.junit.Assert.fail;
+import main.Stack;
 
 import org.junit.Test;
 
 public class StackTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void shouldCreateInstance() {
+		new Stack();
 	}
 }
