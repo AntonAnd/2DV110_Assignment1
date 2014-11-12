@@ -12,8 +12,8 @@ public class StackTest {
 	}
 
 	@Test
-	public void shouldPushString() {
-		Stack s = new Stack();
+	public void shouldPushStringWithOutError() {
+		Stack<String> s = new Stack<String>();
 		s.push("Test");
 	}
 }
