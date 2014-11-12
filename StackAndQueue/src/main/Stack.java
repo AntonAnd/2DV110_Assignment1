@@ -23,7 +23,11 @@ public class Stack<E> {
      * Add an element to the stack.
      */
     public void push(E element) {
-        stack.addFirst(element);
+        if(element == null) {
+            throw new IllegalArgumentException();
+        } else {
+            stack.addFirst(element);
+        }
     }
 
 
