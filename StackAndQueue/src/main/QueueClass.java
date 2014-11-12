@@ -21,6 +21,9 @@ public class QueueClass<E> {
 		return queue.peek();
 	}
 	
+	/*Returns and removes the head of the queue, or null if
+	 * queue is empty.
+	 */
 	public E dequeue() {
 		return queue.poll();
 	}
