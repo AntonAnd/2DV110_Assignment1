@@ -20,4 +20,8 @@ public class QueueClass<E> {
 	public E peek(){
 		return queue.peek();
 	}
+	
+	public E dequeue() {
+		return null;
+	}
 }
