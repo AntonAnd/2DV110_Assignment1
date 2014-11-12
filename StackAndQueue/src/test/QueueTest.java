@@ -18,5 +18,15 @@ public class QueueTest<E> {
 		
 		Assert.assertEquals(expected, input);
 	}
+	
+	@Test
+	public void testEnqueueInteger(){
+		QueueClass<Integer> q = new QueueClass<Integer>();
+		int input = 14;
+		q.enqueue(input);
+		int expected = q.peek();
+		
+		Assert.assertEquals(expected, input);
+	}
 
 }
