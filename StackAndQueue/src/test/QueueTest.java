@@ -2,13 +2,21 @@ package test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-public class QueueTest {
+import main.QueueClass;
+
+public class QueueTest<E> {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testEnqueueString(){
+		QueueClass<String> q = new QueueClass<>();
+		String input = "test";
+		q.enqueue(input);
+		String expected = q.peek();
+		
+		Assert.assertEquals(expected, input);
 	}
 
 }
