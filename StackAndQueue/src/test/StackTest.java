@@ -2,6 +2,7 @@ package test;
 
 import main.Stack;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,40 +12,31 @@ import org.junit.Test;
  */
 public class StackTest {
     private String s1 = "Test1";
+    private Stack<String> s;
 
-    @Test
-    public void shouldCreateInstance() {
-        new Stack();
-    }
-
-    @Test
-    public void shouldPushStringWithoutError() {
-        Stack<String> s = new Stack<String>();
-        s.push(s1);
+    @Before
+    public void setup() {
+        s = new Stack<String>();
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void pushNullShouldThrowIllegalArgumentException() {
-        Stack<String> s = new Stack<String>();
-        s.push(null);
+       s.push(null);
     }
 
     @Test
     public void peekString() {
-        Stack<String> s = new Stack<String>();
         s.push(s1);
         Assert.assertEquals(s1, s.peek());
     }
 
     @Test
-    public void peekNullShouldReturnNull() {
-        Stack<String> s = new Stack<String>();
+    public void peekEmptyStackShouldReturnNull() {
         Assert.assertEquals(null, s.peek());
     }
 
     @Test
     public void size() {
-        Stack<String> s = new Stack<String>();
         s.push(s1);
         s.push("Test2");
         Assert.assertEquals(2, s.size());
@@ -52,15 +44,13 @@ public class StackTest {
 
     @Test
     public void popString() {
-        Stack<String> s = new Stack<String>();
         s.push(s1);
         Assert.assertEquals(s1, s.pop());
         Assert.assertEquals(0, s.size());
     }
 
     @Test
-    public void popEmptyShouldReturnNull() {
-        Stack<String> s = new Stack<String>();
+    public void popEmptyStackShouldReturnNull() {
         Assert.assertEquals(null, s.pop());
         Assert.assertEquals(0, s.size());
     }
