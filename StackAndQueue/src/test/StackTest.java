@@ -40,4 +40,12 @@ public class StackTest {
         Stack<String> s = new Stack<String>();
         Assert.assertEquals(null, s.peek());
     }
+
+    @Test
+    public void size() {
+        Stack<String> s = new Stack<String>();
+        s.push("Test1");
+        s.push("Test2");
+        Assert.assertEquals(2, s.size());
+    }
 }
