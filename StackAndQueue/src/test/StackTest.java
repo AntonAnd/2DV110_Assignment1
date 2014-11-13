@@ -57,4 +57,11 @@ public class StackTest {
         Assert.assertEquals(s1, s.pop());
         Assert.assertEquals(0, s.size());
     }
+
+    @Test
+    public void popEmptyShouldReturnNull() {
+        Stack<String> s = new Stack<String>();
+        Assert.assertEquals(null, s.pop());
+        Assert.assertEquals(0, s.size());
+    }
 }
