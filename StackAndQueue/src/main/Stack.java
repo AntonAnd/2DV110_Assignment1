@@ -56,6 +56,9 @@ public class Stack<E> {
      * @return the first object of the stack.
      */
     public E pop() {
-       return stack.removeFirst();
+        if(stack.size() == 0) {
+            return null;
+        }
+        return stack.removeFirst();
     }
 }
