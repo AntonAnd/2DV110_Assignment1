@@ -20,16 +20,20 @@ public class Stack<E> {
     }
 
     /**
-     * Add an element to the stack.
+     * Add an object to the stack.
      */
-    public void push(E element) {
-        if(element == null) {
+    public void push(E obj) {
+        if(obj == null) {
             throw new IllegalArgumentException();
         } else {
-            stack.addFirst(element);
+            stack.addFirst(obj);
         }
     }
 
+    /**
+     * Returns the object at the top of the stack without removing it.
+     * @return the obj at top of the stack.
+     */
     public E peek(){
         return stack.getFirst();
     }
