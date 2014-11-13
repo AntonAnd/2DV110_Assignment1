@@ -40,4 +40,8 @@ public class Stack<E> {
         }
         return stack.getFirst();
     }
+
+    public int size() {
+        return stack.size();
+    }
 }
