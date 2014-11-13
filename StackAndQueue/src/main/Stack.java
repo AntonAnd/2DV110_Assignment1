@@ -35,6 +35,9 @@ public class Stack<E> {
      * @return the obj at top of the stack.
      */
     public E peek(){
+        if(stack.size() == 0) {
+            return null;
+        }
         return stack.getFirst();
     }
 
