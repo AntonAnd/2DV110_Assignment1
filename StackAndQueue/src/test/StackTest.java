@@ -2,6 +2,7 @@ package test;
 
 import main.Stack;
 
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -26,5 +27,12 @@ public class StackTest {
 			fail("Should throw IllegalArgumentException");
 		} catch (IllegalArgumentException e) {
 		}
+	}
+
+	@Test
+	public void peekString() {
+		Stack<String> s = new Stack<String>();
+		s.push("Test");
+		Assert.assertEquals("Test", s.peek());
 	}
 }
