@@ -55,6 +55,6 @@ public class StackTest {
         Stack<String> s = new Stack<String>();
         s.push(s1);
         Assert.assertEquals(s1, s.pop());
+        Assert.assertEquals(0, s.size());
     }
-
 }

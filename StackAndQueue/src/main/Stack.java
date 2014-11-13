@@ -41,7 +41,16 @@ public class Stack<E> {
         return stack.getFirst();
     }
 
+    /**
+     * Returns the number of objects in the stack.
+     *
+     * @return the number of objects.
+     */
     public int size() {
         return stack.size();
+    }
+
+    public E pop() {
+       return stack.removeFirst();
     }
 }
