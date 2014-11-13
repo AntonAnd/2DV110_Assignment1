@@ -30,5 +30,8 @@ public class Stack<E> {
         }
     }
 
+    public E peek(){
+        return stack.getFirst();
+    }
 
 }
