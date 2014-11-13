@@ -35,4 +35,10 @@ public class StackTest {
 		s.push("Test");
 		Assert.assertEquals("Test", s.peek());
 	}
+
+	@Test
+	public void peekNullShouldReturnNull() {
+		Stack<String> s = new Stack<String>();
+		Assert.assertEquals(null, s.peek());
+	}
 }
