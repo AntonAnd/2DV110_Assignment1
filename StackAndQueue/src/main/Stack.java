@@ -4,9 +4,8 @@ import java.util.LinkedList;
 
 /**
  * This class is our implementation of a Stack.
- * 
+ *
  * @author Johan Widen
- * 
  */
 public class Stack<E> {
 
@@ -23,7 +22,7 @@ public class Stack<E> {
      * Add an object to the stack.
      */
     public void push(E obj) {
-        if(obj == null) {
+        if (obj == null) {
             throw new IllegalArgumentException();
         } else {
             stack.addFirst(obj);
@@ -32,13 +31,13 @@ public class Stack<E> {
 
     /**
      * Returns the object at the top of the stack without removing it.
-     * @return the obj at top of the stack.
+     *
+     * @return the obj at top of the stack or null when empty.
      */
-    public E peek(){
-        if(stack.size() == 0) {
+    public E peek() {
+        if (stack.size() == 0) {
             return null;
         }
         return stack.getFirst();
     }
-
 }
