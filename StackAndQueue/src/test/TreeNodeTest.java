@@ -41,5 +41,10 @@ public class TreeNodeTest<E> {
 		t.setParent(null);
 	}
 	
+	@Test
+	public void getDataTest(){
+		TreeNode<String> t = new TreeNode<String>();
+	}
+	
 	
 }
