@@ -41,8 +41,12 @@ public class QueueTest<E> {
 	}
 	
 	@Test
-	public int testSize(){
-		return 0;
+	public void testSize(){
+		QueueClass<Integer> q = new QueueClass<Integer>();
+		int input = 12;
+		q.enqueue(input);
+		q.enqueue(41);
+		Assert.assertEquals(2, q.getSize());
 	}
 
 }

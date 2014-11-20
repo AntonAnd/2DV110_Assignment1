@@ -27,4 +27,8 @@ public class QueueClass<E> {
 	public E dequeue() {
 		return queue.poll();
 	}
+	
+	public int getSize(){
+		return queue.size();
+	}
 }
