@@ -3,50 +3,56 @@ package test;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import main.QueueClass;
 
 public class QueueTest<E> {
+	private QueueClass<Integer> queueInt;
+	private QueueClass<String> queueString;
+	
+	@Before
+	public void init(){
+		queueInt = new QueueClass<Integer>();
+		queueString = new QueueClass<String>();
+		
+	}
 	
 
 	@Test
 	public void testEnqueueString(){
-		QueueClass<String> q = new QueueClass<String>();
 		String input = "test";
-		q.enqueue(input);
-		String expected = q.peek();
+		queueString.enqueue(input);
+		String expected = queueString.peek();
 		
 		Assert.assertEquals(expected, input);
 	}
 	
 	@Test
 	public void testEnqueueInteger(){
-		QueueClass<Integer> q = new QueueClass<Integer>();
 		int input = 14;
-		q.enqueue(input);
-		int expected = q.peek();
+		queueInt.enqueue(input);
+		int expected = queueInt.peek();
 		
 		Assert.assertEquals(expected, input);
 	}
 	
 	@Test
 	public void testDequeue(){
-		QueueClass<Integer> q = new QueueClass<Integer>();
 		int input = 12;
-		q.enqueue(input);
-		int expected = q.dequeue();
+		queueInt.enqueue(input);
+		int expected = queueInt.dequeue();
 		Assert.assertEquals(expected, input);
 		
 	}
 	
 	@Test
 	public void testSize(){
-		QueueClass<Integer> q = new QueueClass<Integer>();
 		int input = 12;
-		q.enqueue(input);
-		q.enqueue(41);
-		Assert.assertEquals(2, q.getSize());
+		queueInt.enqueue(input);
+		queueInt.enqueue(41);
+		Assert.assertEquals(2, queueInt.getSize());
 	}
 
 }
