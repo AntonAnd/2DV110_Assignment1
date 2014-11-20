@@ -8,6 +8,7 @@ import org.junit.Test;
 import main.QueueClass;
 
 public class QueueTest<E> {
+	
 
 	@Test
 	public void testEnqueueString(){
@@ -35,9 +36,13 @@ public class QueueTest<E> {
 		int input = 12;
 		q.enqueue(input);
 		int expected = q.dequeue();
-		
 		Assert.assertEquals(expected, input);
 		
+	}
+	
+	@Test
+	public int testSize(){
+		return 0;
 	}
 
 }
