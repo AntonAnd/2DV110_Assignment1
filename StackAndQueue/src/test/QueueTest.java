@@ -19,6 +19,13 @@ public class QueueTest<E> {
 		
 	}
 	
+	@Test
+	public void testPeek(){
+		queueInt.enqueue(12);
+		int result = queueInt.peek();
+		Assert.assertEquals(12, result);
+	}
+	
 	@Test(expected = IllegalArgumentException.class)
     public void enqueueNullShouldThrowIllegalArgumentException() {
        queueInt.enqueue(null);

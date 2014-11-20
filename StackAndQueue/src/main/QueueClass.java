@@ -31,6 +31,7 @@ public class QueueClass<E> {
 		return queue.poll();
 	}
 	
+	/*Returns the size of the queue*/
 	public int getSize(){
 		return queue.size();
 	}
