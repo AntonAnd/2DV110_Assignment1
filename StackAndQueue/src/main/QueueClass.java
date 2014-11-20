@@ -13,6 +13,9 @@ public class QueueClass<E> {
 	
 	/*Enqueue an element*/
 	public void enqueue(E element){
+		if(element == null){
+			throw new IllegalArgumentException();
+		}
 		queue.add(element);
 	}
 	
