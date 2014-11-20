@@ -5,14 +5,20 @@ import java.util.ArrayList;
 import main.TreeNode;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TreeNodeTest<E> {
+	private TreeNode<String> t;
+	private TreeNode<String> nodeWithData = new TreeNode<String>("test");
 
+	@Before
+	public void init(){
+		 t = new TreeNode<String>();
+	}
 	
 	@Test 
 	public void testConstructor(){
-		TreeNode<String> t = new TreeNode<String>();
 		ArrayList<TreeNode<String>> a = t.getChildren();
 		
 		Assert.assertNotNull(a);
@@ -20,15 +26,12 @@ public class TreeNodeTest<E> {
 	
 	@Test
 	public void getChildrenTest(){
-		TreeNode<String> t = new TreeNode<String>();
-		ArrayList<TreeNode<String>> a = t.getChildren();
 		if(t.getChildren().isEmpty())
 			Assert.assertTrue(true);
 	}
 	
 	@Test
 	public void getParentTest(){
-		TreeNode<String> t = new TreeNode<String>();
 		TreeNode<String> s = new TreeNode<String>();
 		t.setParent(s);
 		Assert.assertEquals(s, t.getParent());
@@ -37,14 +40,12 @@ public class TreeNodeTest<E> {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void setParentNullShouldThrowIllegalArgumentException() {
-		TreeNode<String> t = new TreeNode<String>();
 		t.setParent(null);
 	}
 	
 	@Test
 	public void getDataTest(){
-		TreeNode<String> t = new TreeNode<String>("test");
-		Assert.assertEquals("test", t.getData());
+		Assert.assertEquals("test", nodeWithData.getData());
 	}
 	
 	
