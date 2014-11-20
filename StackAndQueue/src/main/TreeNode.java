@@ -15,4 +15,15 @@ public class TreeNode<E> {
 	public ArrayList<TreeNode<E>> getChildren(){
 		return children;
 	}
+	
+	public TreeNode<E> getParent(){
+		return parent;
+	}
+	
+	public void setParent(TreeNode<E> parent){
+		if(parent == null){
+			throw new IllegalArgumentException();
+		}
+		this.parent = parent;
+	}
 }

@@ -28,12 +28,17 @@ public class TreeNodeTest<E> {
 	
 	@Test
 	public void getParentTest(){
-		
+		TreeNode<String> t = new TreeNode<String>();
+		TreeNode<String> s = new TreeNode<String>();
+		t.setParent(s);
+		Assert.assertEquals(s, t.getParent());
 	}
 	
-	@Test
-	public void setParentTest(){
-		
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void pushNullShouldThrowIllegalArgumentException() {
+		TreeNode<String> t = new TreeNode<String>();
+		t.setParent(null);
 	}
 	
 	
