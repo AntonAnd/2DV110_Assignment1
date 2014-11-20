@@ -1,5 +1,6 @@
 package test;
 
+import main.Tree;
 import org.junit.Assert;
 import org.junit.Test;
 
