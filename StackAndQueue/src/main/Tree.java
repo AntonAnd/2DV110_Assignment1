@@ -6,7 +6,13 @@ package main;
  */
 public class Tree<E> {
 
+    private TreeNode<E> root;
+
     public Tree() {
 
+    }
+
+    public Tree(TreeNode<E> rootNode) {
+        this.root = rootNode;
     }
 }
