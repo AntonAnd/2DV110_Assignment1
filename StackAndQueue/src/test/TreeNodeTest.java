@@ -18,11 +18,12 @@ public class TreeNodeTest<E> {
 		Assert.assertNotNull(a);
 	}
 	
-	/*@Test
+	@Test
 	public void getChildrenTest(){
 		TreeNode<String> t = new TreeNode<String>();
 		ArrayList<TreeNode<String>> a = t.getChildren();
-		Assert.assertEquals(null, a);
-	}*/
+		if(t.getChildren().isEmpty())
+			Assert.assertTrue(true);
+	}
 	
 }
