@@ -8,6 +8,10 @@ public class TreeNode<E> {
 	ArrayList<TreeNode<E>> children;
 	E data;
 	
+	public TreeNode(){
+		children = new ArrayList<>();
+	}
+	
 	public ArrayList<TreeNode<E>> getChildren(){
 		return children;
 	}
