@@ -23,11 +23,6 @@ public class TreeTest {
 
     @Test
     public void testConstructor(){
-       new Tree<String>();
-    }
-
-    @Test
-    public void testConstructor2(){
-        new Tree<Integer>(tInt);
+        new Tree<>(tInt);
     }
 }

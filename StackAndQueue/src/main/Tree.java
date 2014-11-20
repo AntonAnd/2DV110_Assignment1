@@ -8,10 +8,10 @@ public class Tree<E> {
 
     private TreeNode<E> root;
 
-    public Tree() {
-
-    }
-
+    /**
+     * Constructor that takes an TreeNode, that will be the root of the tree, as parameter.
+     * @param rootNode The root node of the Tree.
+     */
     public Tree(TreeNode<E> rootNode) {
         this.root = rootNode;
     }
