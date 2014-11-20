@@ -19,6 +19,10 @@ public class QueueTest<E> {
 		
 	}
 	
+	@Test(expected = IllegalArgumentException.class)
+    public void enqueueNullShouldThrowIllegalArgumentException() {
+       queueInt.enqueue(null);
+    }
 
 	@Test
 	public void testEnqueueString(){
@@ -28,6 +32,7 @@ public class QueueTest<E> {
 		
 		Assert.assertEquals(expected, input);
 	}
+	
 	
 	@Test
 	public void testEnqueueInteger(){
