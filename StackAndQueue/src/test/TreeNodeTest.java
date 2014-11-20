@@ -36,7 +36,7 @@ public class TreeNodeTest<E> {
 	
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void pushNullShouldThrowIllegalArgumentException() {
+	public void setParentNullShouldThrowIllegalArgumentException() {
 		TreeNode<String> t = new TreeNode<String>();
 		t.setParent(null);
 	}
