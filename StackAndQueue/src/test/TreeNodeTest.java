@@ -26,4 +26,15 @@ public class TreeNodeTest<E> {
 			Assert.assertTrue(true);
 	}
 	
+	@Test
+	public void getParentTest(){
+		
+	}
+	
+	@Test
+	public void setParentTest(){
+		
+	}
+	
+	
 }
