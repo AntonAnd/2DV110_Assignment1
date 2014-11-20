@@ -5,12 +5,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
+ * This class contains test methods for testing the Tree class.
  * Created by Johan Widen on 2014-11-20.
  */
-public class TreeTest<E> {
+public class TreeTest {
 
     @Test
     public void testConstructor(){
-       Tree<String> a = new Tree<String>();
+       new Tree<String>();
     }
 }
