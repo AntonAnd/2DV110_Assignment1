@@ -43,7 +43,8 @@ public class TreeNodeTest<E> {
 	
 	@Test
 	public void getDataTest(){
-		TreeNode<String> t = new TreeNode<String>();
+		TreeNode<String> t = new TreeNode<String>("test");
+		Assert.assertEquals("test", t.getData());
 	}
 	
 	

@@ -8,6 +8,11 @@ public class TreeNode<E> {
 	ArrayList<TreeNode<E>> children;
 	E data;
 	
+	public TreeNode(E inputData){
+		children = new ArrayList<>();
+		data = inputData;
+		
+	}
 	public TreeNode(){
 		children = new ArrayList<>();
 	}
@@ -25,5 +30,9 @@ public class TreeNode<E> {
 			throw new IllegalArgumentException();
 		}
 		this.parent = parent;
+	}
+	
+	public E getData(){
+		return data;
 	}
 }
