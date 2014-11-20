@@ -39,10 +39,5 @@ public class QueueTest<E> {
 		Assert.assertEquals(expected, input);
 		
 	}
-	
-	@Test
-	public void testPeek(){
-		
-	}
 
 }
