@@ -15,4 +15,8 @@ public class Tree<E> {
     public Tree(TreeNode<E> rootNode) {
         this.root = rootNode;
     }
+
+    public TreeNode<E> root() {
+        return root;
+    }
 }
