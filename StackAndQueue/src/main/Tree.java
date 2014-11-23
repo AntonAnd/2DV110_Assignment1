@@ -25,6 +25,10 @@ public class Tree<E> {
         return root;
     }
 
+    /**
+     * Returns the number of nodes in the tree.
+     * @return number of nodes the tree.
+     */
     public int size() {
         return size;
     }
