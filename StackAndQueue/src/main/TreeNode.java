@@ -37,6 +37,9 @@ public class TreeNode<E> {
 	}
 	
 	public boolean isJsonObject(){
+		if(data.toString().equalsIgnoreCase("{")){
+			return true;
+		}
 		return false;
 	}
 }
