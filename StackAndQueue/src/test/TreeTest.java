@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * This class contains test methods for testing the Tree class.
@@ -14,7 +15,9 @@ import static org.mockito.Mockito.mock;
  */
 public class TreeTest {
 
-    TreeNode<Integer> tInt;
+    private Tree<Integer> tree;
+    private TreeNode<Integer> tInt;
+
 
     @Before
     public void init() {
@@ -24,5 +27,11 @@ public class TreeTest {
     @Test
     public void testConstructor(){
         new Tree<>(tInt);
+    }
+
+    @Test
+    public void testRoot(){
+        tree = new Tree<>(tInt);
+        Assert.assertEquals(tInt, tree.root());
     }
 }
