@@ -16,6 +16,10 @@ public class Tree<E> {
         this.root = rootNode;
     }
 
+    /**
+     * Returns the root of the tree.
+     * @return TreeNode that are the root for the this tree.
+     */
     public TreeNode<E> root() {
         return root;
     }
