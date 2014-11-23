@@ -39,4 +39,11 @@ public class TreeTest {
         tree = new Tree<>(tInt);
         Assert.assertEquals(1, tree.size());
     }
+
+    @Test
+    public void testAddChild(){
+        tree = new Tree<>(tInt);
+        tree.addChild(tree.root(), new TreeNode<Integer>(5));
+        Assert.assertEquals(2, tree.size());
+    }
 }
