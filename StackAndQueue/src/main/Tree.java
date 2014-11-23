@@ -7,6 +7,7 @@ package main;
 public class Tree<E> {
 
     private TreeNode<E> root;
+    private int size = 1;
 
     /**
      * Constructor that takes an TreeNode, that will be the root of the tree, as parameter.
@@ -22,5 +23,9 @@ public class Tree<E> {
      */
     public TreeNode<E> root() {
         return root;
+    }
+
+    public int size() {
+        return size;
     }
 }
