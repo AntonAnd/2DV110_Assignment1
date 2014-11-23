@@ -32,4 +32,9 @@ public class Tree<E> {
     public int size() {
         return size;
     }
+
+    public void addChild(TreeNode<E> parent, TreeNode<E> child) {
+        root.getChildren().add(child);
+        size++;
+    }
 }
