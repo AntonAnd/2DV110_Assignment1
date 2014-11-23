@@ -35,4 +35,8 @@ public class TreeNode<E> {
 	public E getData(){
 		return data;
 	}
+	
+	public boolean isJsonObject(){
+		return false;
+	}
 }

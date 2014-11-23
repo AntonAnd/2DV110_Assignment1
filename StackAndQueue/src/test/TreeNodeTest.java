@@ -10,11 +10,14 @@ import org.junit.Test;
 
 public class TreeNodeTest<E> {
 	private TreeNode<String> t;
-	private TreeNode<String> nodeWithData = new TreeNode<String>("test");
+	private TreeNode<String> nodeWithData;
+	private TreeNode<String> curlyBracketNode;
 
 	@Before
 	public void init(){
 		 t = new TreeNode<String>();
+		 nodeWithData = new TreeNode<String>("test");
+		 curlyBracketNode = new TreeNode<String>("{");
 	}
 	
 	@Test 
@@ -48,5 +51,10 @@ public class TreeNodeTest<E> {
 		Assert.assertEquals("test", nodeWithData.getData());
 	}
 	
+	
+	@Test
+	public void isJsonObjectTest(){
+		Assert.assertTrue(curlyBracketNode.isJsonObject());
+	}
 	
 }
