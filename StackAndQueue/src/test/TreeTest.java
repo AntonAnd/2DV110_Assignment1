@@ -33,4 +33,10 @@ public class TreeTest {
         tree = new Tree<>(tInt);
         Assert.assertEquals(tInt, tree.root());
     }
+
+    @Test
+    public void testSize(){
+        tree = new Tree<>(tInt);
+        Assert.assertEquals(1, tree.size());
+    }
 }
