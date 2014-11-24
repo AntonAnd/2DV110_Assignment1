@@ -42,4 +42,8 @@ public class TreeNode<E> {
 		}
 		return false;
 	}
+	
+	public boolean isJsonArray(){
+		return false;
+	}
 }
