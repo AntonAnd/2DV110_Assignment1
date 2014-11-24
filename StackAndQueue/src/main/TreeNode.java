@@ -9,8 +9,13 @@ public class TreeNode<E> {
 	E data;
 	
 	public TreeNode(E inputData){
-		children = new ArrayList<>();
-		data = inputData;
+		if(inputData == null){
+			throw new NullPointerException("value is null");
+		}
+		else{
+			children = new ArrayList<>();
+			data = inputData;
+		}
 	}
 	
 	public ArrayList<TreeNode<E>> getChildren(){
