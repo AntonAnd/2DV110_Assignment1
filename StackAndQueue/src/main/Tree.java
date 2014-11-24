@@ -36,13 +36,12 @@ public class Tree<E> {
     /**
      * Add a child to the parent node. If parent is null then add the child to the root.
      * @param parent the TreeNode that the child shall belongs to, if null then the child will be added to the root.
-     * @param child the TreeNode that we add to the parent.
+     * @param child the TreeNode that we add to the parent, if null it will throw a NullPointerException.
      */
     public void addChild(TreeNode<E> parent, TreeNode<E> child) {
         if (child == null) {
             throw new NullPointerException("Child can not be null");
-        }
-        if (parent == null) {
+        } else if (parent == null) {
             root.getChildren().add(child);
         } else {
             parent.getChildren().add(child);
