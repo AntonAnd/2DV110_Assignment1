@@ -19,6 +19,7 @@ public class TreeNodeTest<E> {
 		 t = new TreeNode<String>();
 		 nodeWithData = new TreeNode<String>("test");
 		 curlyBracketNode = new TreeNode<String>("{");
+		 arrayNode = new TreeNode<String>("[");
 	}
 	
 	@Test 

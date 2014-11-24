@@ -44,6 +44,9 @@ public class TreeNode<E> {
 	}
 	
 	public boolean isJsonArray(){
+		if(data.toString().equalsIgnoreCase("[")){
+			return true;
+		}
 		return false;
 	}
 }
