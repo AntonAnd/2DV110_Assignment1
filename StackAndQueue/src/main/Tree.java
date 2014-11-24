@@ -11,10 +11,14 @@ public class Tree<E> {
 
     /**
      * Constructor that takes an TreeNode, that will be the root of the tree, as parameter.
-     * @param rootNode The root node of the Tree.
+     * @param rootNode The root node of the Tree, will throw a NullPointerException if null.
      */
     public Tree(TreeNode<E> rootNode) {
-        this.root = rootNode;
+        if (rootNode == null) {
+            throw new NullPointerException("rootNode can not be null");
+        } else {
+            this.root = rootNode;
+        }
     }
 
     /**
@@ -31,5 +35,21 @@ public class Tree<E> {
      */
     public int size() {
         return size;
+    }
+
+    /**
+     * Add a child to the parent node. If parent is null then add the child to the root.
+     * @param parent the TreeNode that the child shall belongs to, if null then the child will be added to the root.
+     * @param child the TreeNode that we add to the parent, if null it will throw a NullPointerException.
+     */
+    public void addChild(TreeNode<E> parent, TreeNode<E> child) {
+        if (child == null) {
+            throw new NullPointerException("Child can not be null");
+        } else if (parent == null) {
+            root.getChildren().add(child);
+        } else {
+            parent.getChildren().add(child);
+        }
+        size++;
     }
 }
