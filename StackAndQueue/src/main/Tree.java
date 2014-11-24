@@ -39,6 +39,9 @@ public class Tree<E> {
      * @param child the TreeNode that we add to the parent.
      */
     public void addChild(TreeNode<E> parent, TreeNode<E> child) {
+        if (child == null) {
+            throw new NullPointerException("Child can not be null");
+        }
         if (parent == null) {
             root.getChildren().add(child);
         } else {
