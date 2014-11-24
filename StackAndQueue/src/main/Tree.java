@@ -14,7 +14,11 @@ public class Tree<E> {
      * @param rootNode The root node of the Tree.
      */
     public Tree(TreeNode<E> rootNode) {
-        this.root = rootNode;
+        if (rootNode == null) {
+            throw new NullPointerException("Child can not be null");
+        } else {
+            this.root = rootNode;
+        }
     }
 
     /**
