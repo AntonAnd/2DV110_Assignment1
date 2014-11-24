@@ -34,14 +34,12 @@ public class Tree<E> {
     }
 
     /**
-     * Add a child to the root node.
+     * Add a child to the parent node.
      * @param parent the TreeNode that the child shall belongs to.
      * @param child the TreeNode that we add to the parent.
      */
     public void addChild(TreeNode<E> parent, TreeNode<E> child) {
-        TreeNode<E> p = parent;
-        TreeNode<E> c = child;
-        p.getChildren().add(c);
+        parent.getChildren().add(child);
         size++;
     }
 }
