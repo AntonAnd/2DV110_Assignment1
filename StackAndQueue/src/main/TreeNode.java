@@ -82,4 +82,8 @@ public class TreeNode<E> {
 		}
 		return false;
 	}
+	
+	public boolean isJsonPrimitive(){
+		return false;
+	}
 }

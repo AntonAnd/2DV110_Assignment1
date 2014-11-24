@@ -12,12 +12,14 @@ public class TreeNodeTest<E> {
 	private TreeNode<String> nodeWithData;
 	private TreeNode<String> curlyBracketNode;
 	private TreeNode<String> arrayNode;
+	private TreeNode<String> primitiveData;
 
 	@Before
 	public void init(){
 		 nodeWithData = new TreeNode<String>("test");
 		 curlyBracketNode = new TreeNode<String>("{");
 		 arrayNode = new TreeNode<String>("[");
+		 primitiveData = new TreeNode<String>("data");
 	}
 	
 	@Test
@@ -62,8 +64,13 @@ public class TreeNodeTest<E> {
 	}
 	
 	@Test
-	public void isJsonArray(){
+	public void isJsonArrayTest(){
 		Assert.assertTrue(arrayNode.isJsonArray());
+	}
+	
+	@Test
+	public void isJsonPrimitiveTest(){
+		Assert.assertTrue(primitiveData.isJsonPrimitive());
 	}
 	
 }
