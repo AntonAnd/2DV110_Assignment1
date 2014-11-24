@@ -34,8 +34,8 @@ public class Tree<E> {
     }
 
     /**
-     * Add a child to the parent node.
-     * @param parent the TreeNode that the child shall belongs to.
+     * Add a child to the parent node. If parent is null then add the child to the root.
+     * @param parent the TreeNode that the child shall belongs to, if null then the child will be added to the root.
      * @param child the TreeNode that we add to the parent.
      */
     public void addChild(TreeNode<E> parent, TreeNode<E> child) {

@@ -16,11 +16,14 @@ public class TreeTest {
 
     private Tree<Integer> tree;
     private TreeNode<Integer> tInt;
+    private TreeNode<Integer> n1;
 
 
     @Before
     public void init() {
         tInt = mock(TreeNode.class);
+        n1 = new TreeNode<>(5);
+        tree = new Tree<>(tInt);
     }
 
     @Test
@@ -30,40 +33,33 @@ public class TreeTest {
 
     @Test
     public void testRoot(){
-        tree = new Tree<>(tInt);
         Assert.assertEquals(tInt, tree.root());
     }
 
     @Test
     public void testSize(){
-        tree = new Tree<>(tInt);
         Assert.assertEquals(1, tree.size());
     }
 
     @Test
     public void testAddChild(){
-        tree = new Tree<>(tInt);
-        tree.addChild(tree.root(), new TreeNode<Integer>(5));
+        tree.addChild(tree.root(), new TreeNode<>(5));
         Assert.assertEquals(2, tree.size());
     }
 
     @Test
     public void testGetChild(){
         tree = new Tree<>(new TreeNode<>(2));
-        TreeNode<Integer> n1 = new TreeNode<Integer>(5);
         tree.addChild(tree.root(), n1);
-        TreeNode<Integer> n2 = new TreeNode<Integer>(3);
+        TreeNode<Integer> n2 = new TreeNode<>(3);
         tree.addChild(n1, n2);
-
         Assert.assertEquals(n2, tree.root().getChildren().get(0).getChildren().get(0));
     }
 
     @Test
-    public void testGetChild2(){
+    public void testGetChildWithNullParent(){
         tree = new Tree<>(new TreeNode<>(2));
-        TreeNode<Integer> n1 = new TreeNode<Integer>(5);
         tree.addChild(null, n1);
-
         Assert.assertEquals(n1, tree.root().getChildren().get(0));
     }
 
