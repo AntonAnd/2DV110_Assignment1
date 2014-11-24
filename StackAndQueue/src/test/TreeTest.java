@@ -63,4 +63,9 @@ public class TreeTest {
         Assert.assertEquals(n1, tree.root().getChildren().get(0));
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testGetChildWithNullParentAndChild(){
+        tree = new Tree<>(new TreeNode<>(2));
+        tree.addChild(null, null);
+    }
 }
