@@ -31,6 +31,11 @@ public class TreeTest {
         new Tree<>(tInt);
     }
 
+    @Test(expected = NullPointerException.class)
+    public void testConstructor2(){
+        new Tree<>(null);
+    }
+
     @Test
     public void testRoot(){
         Assert.assertEquals(tInt, tree.root());
