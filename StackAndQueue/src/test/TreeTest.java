@@ -46,4 +46,16 @@ public class TreeTest {
         tree.addChild(tree.root(), new TreeNode<Integer>(5));
         Assert.assertEquals(2, tree.size());
     }
+
+    @Test
+    public void testGetChild(){
+        tree = new Tree<>(new TreeNode<>(2));
+        TreeNode<Integer> n1 = new TreeNode<Integer>(5);
+        tree.addChild(tree.root(), n1);
+        TreeNode<Integer> n2 = new TreeNode<Integer>(3);
+        tree.addChild(n1, n2);
+
+        Assert.assertEquals(n2, tree.root().getChildren().get(0).getChildren().get(0));
+    }
+
 }
