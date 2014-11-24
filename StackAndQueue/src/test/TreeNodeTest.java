@@ -9,14 +9,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TreeNodeTest<E> {
-	private TreeNode<String> t;
 	private TreeNode<String> nodeWithData;
 	private TreeNode<String> curlyBracketNode;
 	private TreeNode<String> arrayNode;
 
 	@Before
 	public void init(){
-		 t = new TreeNode<String>();
 		 nodeWithData = new TreeNode<String>("test");
 		 curlyBracketNode = new TreeNode<String>("{");
 		 arrayNode = new TreeNode<String>("[");
@@ -24,28 +22,28 @@ public class TreeNodeTest<E> {
 	
 	@Test 
 	public void testConstructor(){
-		ArrayList<TreeNode<String>> a = t.getChildren();
+		ArrayList<TreeNode<String>> a = nodeWithData.getChildren();
 		
 		Assert.assertNotNull(a);
 	}
 	
 	@Test
 	public void getChildrenTest(){
-		if(t.getChildren().isEmpty())
+		if(nodeWithData.getChildren().isEmpty())
 			Assert.assertTrue(true);
 	}
 	
 	@Test
 	public void getParentTest(){
-		TreeNode<String> s = new TreeNode<String>();
-		t.setParent(s);
-		Assert.assertEquals(s, t.getParent());
+		TreeNode<String> s = new TreeNode<String>("test2");
+		nodeWithData.setParent(s);
+		Assert.assertEquals(s, nodeWithData.getParent());
 	}
 	
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void setParentNullShouldThrowIllegalArgumentException() {
-		t.setParent(null);
+		nodeWithData.setParent(null);
 	}
 	
 	@Test

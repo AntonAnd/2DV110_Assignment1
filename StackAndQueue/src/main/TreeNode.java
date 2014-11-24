@@ -11,10 +11,6 @@ public class TreeNode<E> {
 	public TreeNode(E inputData){
 		children = new ArrayList<>();
 		data = inputData;
-		
-	}
-	public TreeNode(){
-		children = new ArrayList<>();
 	}
 	
 	public ArrayList<TreeNode<E>> getChildren(){
