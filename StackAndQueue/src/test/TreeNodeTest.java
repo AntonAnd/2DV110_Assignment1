@@ -20,11 +20,15 @@ public class TreeNodeTest<E> {
 		 arrayNode = new TreeNode<String>("[");
 	}
 	
-	@Test 
+	@Test
+	public void testConstructorNotNull(){
+		TreeNode<String> constructor = new TreeNode<String>("a");
+		Assert.assertNotNull(constructor);
+	}
+	
+	@Test(expected = NullPointerException.class)
 	public void testConstructor(){
-		ArrayList<TreeNode<String>> a = nodeWithData.getChildren();
-		
-		Assert.assertNotNull(a);
+		TreeNode<String> nullConstructor = new TreeNode<String>(null);
 	}
 	
 	@Test
