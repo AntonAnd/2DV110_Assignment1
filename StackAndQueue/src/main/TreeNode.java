@@ -62,7 +62,7 @@ public class TreeNode<E> {
 	}
 	
 	/**
-	 * Checks if the current String is the start of a Json object.
+	 * Checks if the data is the start of a Json object.
 	 * @return True if String is start of Json object, else false.
 	 */
 	public boolean isJsonObject(){
@@ -73,7 +73,7 @@ public class TreeNode<E> {
 	}
 	
 	/**
-	 * Checks if the current String is the start of a Json Array.
+	 * Checks if the data is the start of a Json Array.
 	 * @return True if String is start of Json array, else false.
 	 */
 	public boolean isJsonArray(){
@@ -83,7 +83,14 @@ public class TreeNode<E> {
 		return false;
 	}
 	
+	/**
+	 * Checks if the data is a json primitive, i.e. starting and ending with a quotation mark.
+	 * @return True if String is a json primitive, else false.
+	 */
 	public boolean isJsonPrimitive(){
+		if(data.toString().startsWith("\"") && data.toString().endsWith("\"")){
+			return true;
+		}
 		return false;
 	}
 }
