@@ -46,9 +46,8 @@ public class Main {
 	}
 	
 	public Tree<String> constructTree(QueueClass<String> queue){
-		
-		while (queue.getSize() > 1) {
-			
+		while (queue.getSize() > 1) {	
+
 		}
 		return tree;
 	}
