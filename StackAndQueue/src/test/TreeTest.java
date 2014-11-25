@@ -78,14 +78,20 @@ public class TreeTest {
     }
 
     @Test
-    public void out() {
+    public void testPrintTree() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        TreeNode<String> rootNode = new TreeNode<>("{");
-        Tree<String> t = new Tree<>(rootNode);
-        t.addChild(rootNode, new TreeNode<String>("["));
-        t.addChild(rootNode, new TreeNode<String>("]"));
-        t.addChild(rootNode, new TreeNode<String>("}"));
+        TreeNode<String> n0 = new TreeNode<>("{");
+        TreeNode<String> n1 = mock(TreeNode.class);
+        when(n1.toString()).thenReturn("[");
+        TreeNode<String> n2 = mock(TreeNode.class);
+        when(n2.toString()).thenReturn("]");
+        TreeNode<String> n3 = mock(TreeNode.class);
+        when(n3.toString()).thenReturn("}");
+        Tree<String> t = new Tree<>(n0);
+        t.addChild(n0, n1);
+        t.addChild(n0, n2);
+        t.addChild(n0, n3);
         t.printTree();
         Assert.assertEquals("{\r\n  [\r\n  ]\r\n  }\r\n", outContent.toString());
         System.setOut(null);
