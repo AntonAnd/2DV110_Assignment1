@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
+
 public class Main {
 	private Tree<String> tree;
 	private Stack<TreeNode<String>> stack;
@@ -56,7 +57,18 @@ public class Main {
 		tree = new Tree<String>(rootNode);
 		
 		while (queue.getSize() > 1) {	
-			queue.dequeue();
+			childNode = new TreeNode<String>(queue.dequeue());
+
+			if (childNode.toString().equalsIgnoreCase("}")
+					|| childNode.toString().equalsIgnoreCase("]")) {
+				stack.pop();
+			}
+			parentNode = stack.peek();
+			tree.addChild(parentNode, childNode);
+
+			if (childNode.isJsonArray() || childNode.isJsonObject()) {
+				stack.push(childNode);
+			}
 		}
 		return tree;
 	}
