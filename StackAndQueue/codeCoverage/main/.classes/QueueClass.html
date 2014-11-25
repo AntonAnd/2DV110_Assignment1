@@ -1,0 +1,151 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: QueueClass</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">main</a> ]
+</div>
+
+<h1>Coverage Summary for Class: QueueClass (main)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">QueueClass</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">QueueClass$$EnhancerByMockitoWithCGLIB$$98c7f346</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package main;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.LinkedList;
+<i>4</i>&nbsp;import java.util.Queue;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;/**
+<i>7</i>&nbsp; * This class represents the queue ADT.
+<i>8</i>&nbsp; * @author Anton
+<i>9</i>&nbsp; *
+<i>10</i>&nbsp; * @param &lt;E&gt;
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public class QueueClass&lt;E&gt; {
+<i>13</i>&nbsp;	
+<i>14</i>&nbsp;	private Queue&lt;E&gt; queue;
+<i>15</i>&nbsp;	
+<i>16</i>&nbsp;	/**
+<i>17</i>&nbsp;	 * QueueClass constructor.
+<i>18</i>&nbsp;	 */
+<b class="fc"><i>19</i>&nbsp;	public QueueClass(){</b>
+<b class="fc"><i>20</i>&nbsp;		queue = new LinkedList&lt;E&gt;();</b>
+<b class="fc"><i>21</i>&nbsp;	}</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;	/**
+<i>24</i>&nbsp;	 * Enqueues an element to the queue.
+<i>25</i>&nbsp;	 * @param element element to be added.
+<i>26</i>&nbsp;	 */
+<i>27</i>&nbsp;	public void enqueue(E element){
+<b class="fc"><i>28</i>&nbsp;		if(element == null){</b>
+<b class="fc"><i>29</i>&nbsp;			throw new IllegalArgumentException();</b>
+<i>30</i>&nbsp;		}
+<b class="fc"><i>31</i>&nbsp;		queue.add(element);</b>
+<b class="fc"><i>32</i>&nbsp;	}</b>
+<i>33</i>&nbsp;	
+<i>34</i>&nbsp;	/**
+<i>35</i>&nbsp;	 * Returns the first element in the queue, without removing it.
+<i>36</i>&nbsp;	 * @return head of queue.
+<i>37</i>&nbsp;	 */
+<i>38</i>&nbsp;	public E peek(){
+<b class="fc"><i>39</i>&nbsp;		return queue.peek();</b>
+<i>40</i>&nbsp;	}
+<i>41</i>&nbsp;	
+<i>42</i>&nbsp;	/**
+<i>43</i>&nbsp;	 * Returns and removes the head of the queue, or null if 
+<i>44</i>&nbsp;	 * queue is empty.
+<i>45</i>&nbsp;	 * @return head of queue.
+<i>46</i>&nbsp;	 */
+<i>47</i>&nbsp;	public E dequeue() {
+<b class="fc"><i>48</i>&nbsp;		return queue.poll();</b>
+<i>49</i>&nbsp;	}
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;	/**
+<i>52</i>&nbsp;	 * Returns the size of the queue.
+<i>53</i>&nbsp;	 * @return size of the queue.
+<i>54</i>&nbsp;	 */
+<i>55</i>&nbsp;	public int getSize(){
+<b class="fc"><i>56</i>&nbsp;		return queue.size();</b>
+<i>57</i>&nbsp;	}
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2014-11-25 22:46</div>
+</div>
+</body>
+</html>

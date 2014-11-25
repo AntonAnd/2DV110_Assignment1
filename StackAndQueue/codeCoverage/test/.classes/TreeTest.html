@@ -1,0 +1,182 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TreeTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">test</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TreeTest (test)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TreeTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95.7%
+  </span>
+  <span class="absValue">
+    (44/ 46)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package test;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import main.Tree;
+<i>4</i>&nbsp;import main.TreeNode;
+<i>5</i>&nbsp;import org.junit.Assert;
+<i>6</i>&nbsp;import org.junit.Before;
+<i>7</i>&nbsp;import org.junit.Test;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import java.io.ByteArrayOutputStream;
+<i>10</i>&nbsp;import java.io.PrintStream;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import static org.mockito.Mockito.*;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;/**
+<i>15</i>&nbsp; * This class contains test methods for testing the Tree class.
+<i>16</i>&nbsp; * Created by Johan Widen on 2014-11-20.
+<i>17</i>&nbsp; */
+<b class="fc"><i>18</i>&nbsp;public class TreeTest {</b>
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    private Tree&lt;Integer&gt; tree;
+<i>21</i>&nbsp;    private TreeNode&lt;Integer&gt; tInt;
+<i>22</i>&nbsp;    private TreeNode&lt;Integer&gt; n1;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    @Before
+<i>26</i>&nbsp;    public void init() {
+<b class="fc"><i>27</i>&nbsp;        tInt = mock(TreeNode.class);</b>
+<b class="fc"><i>28</i>&nbsp;        n1 = new TreeNode&lt;&gt;(5);</b>
+<b class="fc"><i>29</i>&nbsp;        tree = new Tree&lt;&gt;(tInt);</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Test
+<i>33</i>&nbsp;    public void testConstructor(){
+<b class="fc"><i>34</i>&nbsp;        new Tree&lt;&gt;(tInt);</b>
+<b class="fc"><i>35</i>&nbsp;    }</b>
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    @Test(expected = NullPointerException.class)
+<i>38</i>&nbsp;    public void testConstructor2(){
+<b class="fc"><i>39</i>&nbsp;        new Tree&lt;&gt;(null);</b>
+<b class="nc"><i>40</i>&nbsp;    }</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    @Test
+<i>43</i>&nbsp;    public void testRoot(){
+<b class="fc"><i>44</i>&nbsp;        Assert.assertEquals(tInt, tree.root());</b>
+<b class="fc"><i>45</i>&nbsp;    }</b>
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    @Test
+<i>48</i>&nbsp;    public void testSize(){
+<b class="fc"><i>49</i>&nbsp;        Assert.assertEquals(1, tree.size());</b>
+<b class="fc"><i>50</i>&nbsp;    }</b>
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    @Test
+<i>53</i>&nbsp;    public void testAddChild(){
+<b class="fc"><i>54</i>&nbsp;        tree.addChild(tree.root(), new TreeNode&lt;&gt;(5));</b>
+<b class="fc"><i>55</i>&nbsp;        Assert.assertEquals(2, tree.size());</b>
+<b class="fc"><i>56</i>&nbsp;    }</b>
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    @Test
+<i>59</i>&nbsp;    public void testGetChild(){
+<b class="fc"><i>60</i>&nbsp;        tree = new Tree&lt;&gt;(new TreeNode&lt;&gt;(2));</b>
+<b class="fc"><i>61</i>&nbsp;        tree.addChild(tree.root(), n1);</b>
+<b class="fc"><i>62</i>&nbsp;        TreeNode&lt;Integer&gt; n2 = new TreeNode&lt;&gt;(3);</b>
+<b class="fc"><i>63</i>&nbsp;        tree.addChild(n1, n2);</b>
+<b class="fc"><i>64</i>&nbsp;        Assert.assertEquals(n2, tree.root().getChildren().get(0).getChildren().get(0));</b>
+<b class="fc"><i>65</i>&nbsp;    }</b>
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;    @Test
+<i>68</i>&nbsp;    public void testGetChildWithNullParent(){
+<b class="fc"><i>69</i>&nbsp;        tree = new Tree&lt;&gt;(new TreeNode&lt;&gt;(2));</b>
+<b class="fc"><i>70</i>&nbsp;        tree.addChild(null, n1);</b>
+<b class="fc"><i>71</i>&nbsp;        Assert.assertEquals(n1, tree.root().getChildren().get(0));</b>
+<b class="fc"><i>72</i>&nbsp;    }</b>
+<i>73</i>&nbsp;
+<i>74</i>&nbsp;    @Test(expected = NullPointerException.class)
+<i>75</i>&nbsp;    public void testGetChildWithNullParentAndChild(){
+<b class="fc"><i>76</i>&nbsp;        tree = new Tree&lt;&gt;(new TreeNode&lt;&gt;(2));</b>
+<b class="fc"><i>77</i>&nbsp;        tree.addChild(null, null);</b>
+<b class="nc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    @Test
+<i>81</i>&nbsp;    public void testPrintTree() {
+<b class="fc"><i>82</i>&nbsp;        ByteArrayOutputStream outContent = new ByteArrayOutputStream();</b>
+<b class="fc"><i>83</i>&nbsp;        System.setOut(new PrintStream(outContent));</b>
+<b class="fc"><i>84</i>&nbsp;        TreeNode&lt;String&gt; n0 = new TreeNode&lt;&gt;(&quot;{&quot;);</b>
+<b class="fc"><i>85</i>&nbsp;        TreeNode&lt;String&gt; n1 = mock(TreeNode.class);</b>
+<b class="fc"><i>86</i>&nbsp;        when(n1.toString()).thenReturn(&quot;[&quot;);</b>
+<b class="fc"><i>87</i>&nbsp;        TreeNode&lt;String&gt; n2 = mock(TreeNode.class);</b>
+<b class="fc"><i>88</i>&nbsp;        when(n2.toString()).thenReturn(&quot;]&quot;);</b>
+<b class="fc"><i>89</i>&nbsp;        TreeNode&lt;String&gt; n3 = mock(TreeNode.class);</b>
+<b class="fc"><i>90</i>&nbsp;        when(n3.toString()).thenReturn(&quot;}&quot;);</b>
+<b class="fc"><i>91</i>&nbsp;        Tree&lt;String&gt; t = new Tree&lt;&gt;(n0);</b>
+<b class="fc"><i>92</i>&nbsp;        t.addChild(n0, n1);</b>
+<b class="fc"><i>93</i>&nbsp;        t.addChild(n0, n2);</b>
+<b class="fc"><i>94</i>&nbsp;        t.addChild(n0, n3);</b>
+<b class="fc"><i>95</i>&nbsp;        t.printTree();</b>
+<b class="fc"><i>96</i>&nbsp;        Assert.assertEquals(&quot;{\r\n  [\r\n  ]\r\n  }\r\n&quot;, outContent.toString());</b>
+<b class="fc"><i>97</i>&nbsp;        System.setOut(null);</b>
+<b class="fc"><i>98</i>&nbsp;    }</b>
+<i>99</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2014-11-25 22:46</div>
+</div>
+</body>
+</html>
