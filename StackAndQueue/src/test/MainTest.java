@@ -48,8 +48,6 @@ public class MainTest {
 	
 	@Test
 	public void testConstructTree(){
-		queue = mock(QueueClass.class);
-		
 		Tree<String> tree = main.constructTree(queue);
 		verify(queue).getSize();
 	}

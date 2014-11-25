@@ -5,30 +5,26 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-
-
 public class Main {
 	private Tree<String> tree;
 	private Stack<TreeNode<String>> stack;
 
 	public static void main(String[] args) {
-		
+
 	}
 
-	public Main(String file){
-		if(file == null){
+	public Main(String file) {
+		if (file == null) {
 			throw new NullPointerException();
-		}
-		else{
+		} else {
 			constructQueue(file);
-	
+
 		}
 	}
 
-	
-	public QueueClass<String> constructQueue(String jsonFileName){
+	public QueueClass<String> constructQueue(String jsonFileName) {
 		QueueClass<String> queue = new QueueClass<String>();
-		
+
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(jsonFileName));
 			String bfLine;
@@ -44,25 +40,26 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		return queue;
 	}
-	
-	public Tree<String> constructTree(QueueClass<String> queue){
-		
+
+	public Tree<String> constructTree(QueueClass<String> queue) {
+
 		stack = new Stack<TreeNode<String>>();
 		TreeNode<String> childNode;
 		TreeNode<String> parentNode;
 		TreeNode<String> rootNode = new TreeNode<>("root");
 		tree = new Tree<String>(rootNode);
-		
-		while (queue.getSize() > 1) {	
+
+		while (queue.getSize() > 1) {
 			childNode = new TreeNode<String>(queue.dequeue());
 
 			if (childNode.toString().equalsIgnoreCase("}")
 					|| childNode.toString().equalsIgnoreCase("]")) {
 				stack.pop();
 			}
+
 			parentNode = stack.peek();
 			tree.addChild(parentNode, childNode);
 
@@ -70,6 +67,7 @@ public class Main {
 				stack.push(childNode);
 			}
 		}
+
 		return tree;
 	}
 }
