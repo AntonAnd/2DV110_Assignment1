@@ -95,6 +95,6 @@ public class TreeNode<E> {
 	}
 	
 	public String toString(){
-		return null;
+		return data.toString();
 	}
 }
