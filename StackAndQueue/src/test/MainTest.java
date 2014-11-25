@@ -21,6 +21,7 @@ public class MainTest {
 	@Mock private QueueClass<String> queue;
 	private Main main;
 	private String filePath = "C:\\Users\\Anton\\Documents\\json.txt";
+
 	private QueueClass<String> q;
 	
 	@Before
