@@ -10,6 +10,9 @@ public class Main {
 		if(file == null){
 			throw new NullPointerException();
 		}
+		else{
+			constructQueue(file);
+		}
 	}
 
 	
