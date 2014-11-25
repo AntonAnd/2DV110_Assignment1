@@ -1,9 +1,6 @@
 package main;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
 	private Tree<String> tree;
@@ -23,7 +20,7 @@ public class Main {
 	}
 
 	public QueueClass<String> constructQueue(String jsonFileName) {
-		QueueClass<String> queue = new QueueClass<String>();
+		QueueClass<String> queue = new QueueClass<>();
 
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader(jsonFileName));
@@ -46,14 +43,14 @@ public class Main {
 
 	public Tree<String> constructTree(QueueClass<String> queue) {
 
-		stack = new Stack<TreeNode<String>>();
+		stack = new Stack<>();
 		TreeNode<String> childNode;
 		TreeNode<String> parentNode;
 		TreeNode<String> rootNode = new TreeNode<>("root");
-		tree = new Tree<String>(rootNode);
+		tree = new Tree<>(rootNode);
 
 		while (queue.getSize() > 1) {
-			childNode = new TreeNode<String>(queue.dequeue());
+			childNode = new TreeNode<>(queue.dequeue());
 
 			if (childNode.toString().equalsIgnoreCase("}")
 					|| childNode.toString().equalsIgnoreCase("]")) {
@@ -71,6 +68,9 @@ public class Main {
 		return tree;
 	}
 
+	/**
+	 * Prints out the tree.
+	 */
 	public void printTree(Tree<String> jsonTree) {
 		jsonTree.printTree();
 	}

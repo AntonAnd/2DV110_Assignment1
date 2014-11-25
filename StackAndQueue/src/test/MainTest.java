@@ -1,19 +1,9 @@
 package test;
 
+import org.junit.*;
+import org.mockito.*;
 
-
-import main.TreeNode;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
-
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import main.Main;
-import main.QueueClass;
-import main.Tree;
+import main.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -71,7 +61,8 @@ public class MainTest {
 		q = main.constructQueue("src/jsonTextFileShort");
 		Tree<String> tree = main.constructTree(q);
 		main.printTree(tree);
-		Assert.assertEquals("root\r\n  {\r\n    \"menu\"\r\n    :\r\n    \"test\"\r\n", outContent.toString());
+		Assert.assertEquals("root\r\n  {\r\n    \"menu\"\r\n    " +
+				":\r\n    \"test\"\r\n", outContent.toString());
 		System.setOut(null);
 	}
 }
