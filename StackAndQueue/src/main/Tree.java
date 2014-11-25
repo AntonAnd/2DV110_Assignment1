@@ -54,6 +54,27 @@ public class Tree<E> {
     }
 
     public void printTree() {
+        printTree(root, 0);
     }
 
+    private void printTree(TreeNode<E> n, int indent) {
+        TreeNode<E> currentNode = (TreeNode<E>) n;
+        System.out.println(treeIndent(indent) + currentNode.toString());
+
+        if (!currentNode.getChildren().isEmpty()) {
+            for (int i = 0; i < currentNode.children.size(); i++) {
+                printTree(currentNode.getChildren().get(i), indent + 1);
+
+            }
+        }
+    }
+
+    private String treeIndent(int indent) {
+        StringBuilder stringbuilder = new StringBuilder();
+
+        for (int i = 0; i < indent; i++) {
+            stringbuilder.append("  ");
+        }
+        return stringbuilder.toString();
+    }
 }
