@@ -1,5 +1,10 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -19,7 +24,21 @@ public class Main {
 	public QueueClass<String> constructQueue(String jsonFileName){
 		QueueClass<String> queue = new QueueClass<String>();
 		
-		
+		try {
+			BufferedReader bf = new BufferedReader(new FileReader(jsonFileName));
+			String bfLine;
+			while ((bfLine = bf.readLine()) != null) {
+				queue.enqueue(bfLine);
+			}
+
+			return queue;
+
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		return queue;
 	}
