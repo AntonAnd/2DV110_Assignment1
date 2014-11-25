@@ -52,4 +52,8 @@ public class Tree<E> {
         }
         size++;
     }
+
+    public void printTree() {
+    }
+
 }

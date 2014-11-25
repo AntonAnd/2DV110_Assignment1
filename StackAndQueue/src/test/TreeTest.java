@@ -6,6 +6,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.mockito.Mockito.*;
 
 /**
@@ -72,5 +75,19 @@ public class TreeTest {
     public void testGetChildWithNullParentAndChild(){
         tree = new Tree<>(new TreeNode<>(2));
         tree.addChild(null, null);
+    }
+
+    @Test
+    public void out() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        TreeNode<String> rootNode = new TreeNode<>("{");
+        Tree<String> t = new Tree<>(rootNode);
+        t.addChild(rootNode, new TreeNode<String>("["));
+        t.addChild(rootNode, new TreeNode<String>("]"));
+        t.addChild(rootNode, new TreeNode<String>("}"));
+        t.printTree();
+        Assert.assertEquals("{\r\n  [\r\n  ]\r\n  }\r\n", outContent.toString());
+        System.setOut(null);
     }
 }
