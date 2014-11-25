@@ -46,7 +46,6 @@ public class TreeNodeTest<E> {
 		Assert.assertEquals(s, nodeWithData.getParent());
 	}
 	
-	
 	@Test(expected = IllegalArgumentException.class)
 	public void setParentNullShouldThrowIllegalArgumentException() {
 		nodeWithData.setParent(null);
