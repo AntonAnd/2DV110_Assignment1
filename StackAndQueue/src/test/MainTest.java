@@ -6,6 +6,7 @@ import org.mockito.*;
 import main.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
 import static org.mockito.Mockito.*;
@@ -39,7 +40,16 @@ public class MainTest {
 	public void testQueueIsNotEmpty(){
 		Assert.assertTrue(q.getSize()>0);
 	}
-	
+
+	@Test
+	public void testQueueFileNotFound() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		q = main.constructQueue("noFile");
+		Assert.assertEquals("File not found!\r\n", outContent.toString());
+		System.setOut(null);
+
+	}
 	
 	@Test
 	public void testConstructTree(){
