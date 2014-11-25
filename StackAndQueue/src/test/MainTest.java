@@ -6,11 +6,19 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
 import main.Main;
 import main.QueueClass;
+import main.Tree;
+import static org.mockito.Mockito.*;
 
 
 public class MainTest {
+	
+	@Mock private QueueClass<String> queue;
 	private Main main;
 	private String filePath = "C:\\Users\\Anton\\Documents\\json.txt";
 	private QueueClass<String> q;
@@ -19,6 +27,7 @@ public class MainTest {
 	public void init(){
 		main = new Main(filePath);
 		q = main.constructQueue(filePath);
+		MockitoAnnotations.initMocks(this);
 	}
 
 	@Test(expected = NullPointerException.class)
@@ -34,5 +43,15 @@ public class MainTest {
 	@Test
 	public void testQueueIsNotEmpty(){
 		Assert.assertTrue(q.getSize()>0);
+	}
+	
+	
+	@Test
+	public void testConstructTree(){
+		queue = mock(QueueClass.class);
+		
+		Tree<String> tree = main.constructTree(queue);
+		
+		verify(queue).getSize();
 	}
 }

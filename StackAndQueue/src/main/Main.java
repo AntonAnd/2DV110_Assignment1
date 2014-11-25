@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 public class Main {
+	private Tree<String> tree;
 
 	public static void main(String[] args) {
 		
@@ -41,5 +43,10 @@ public class Main {
 		}
 		
 		return queue;
+	}
+	
+	public Tree<String> constructTree(QueueClass<String> queue){
+		
+		return null;
 	}
 }
