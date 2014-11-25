@@ -24,4 +24,12 @@ public class MainTest {
 		QueueClass<String> q = main.constructQueue(filePath);
 		Assert.assertNotNull(q);
 	}
+	
+	@Test
+	public void testQueueIsNotEmpty(){
+		main = new Main(filePath);
+		QueueClass<String> queue = main.constructQueue(filePath);
+		
+		Assert.assertTrue(queue.getSize()>0);
+	}
 }
