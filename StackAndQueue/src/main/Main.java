@@ -6,10 +6,6 @@ public class Main {
 	private Tree<String> tree;
 	private Stack<TreeNode<String>> stack;
 
-	public static void main(String[] args) {
-
-	}
-
 	public Main(String file) {
 		if (file == null) {
 			throw new NullPointerException();
@@ -28,9 +24,6 @@ public class Main {
 			while ((bfLine = bf.readLine()) != null) {
 				queue.enqueue(bfLine);
 			}
-
-			return queue;
-
 		} catch (Exception e) {
 			System.out.println("File not found!");
 		}
