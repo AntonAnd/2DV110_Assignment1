@@ -31,11 +31,8 @@ public class Main {
 
 			return queue;
 
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found.");
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println("File not found!");
 		}
 
 		return queue;
