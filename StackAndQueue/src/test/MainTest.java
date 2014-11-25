@@ -3,6 +3,7 @@ package test;
 
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import main.Main;
@@ -12,6 +13,13 @@ import main.QueueClass;
 public class MainTest {
 	private Main main;
 	private String filePath = "C:\\Users\\Anton\\Documents\\json.txt";
+	private QueueClass<String> q;
+	
+	@Before
+	public void init(){
+		main = new Main(filePath);
+		q = main.constructQueue(filePath);
+	}
 
 	@Test(expected = NullPointerException.class)
 	public void testConstructor(){
@@ -20,16 +28,11 @@ public class MainTest {
 	
 	@Test
 	public void testconstructQueue(){
-		main = new Main(filePath);
-		QueueClass<String> q = main.constructQueue(filePath);
 		Assert.assertNotNull(q);
 	}
 	
 	@Test
 	public void testQueueIsNotEmpty(){
-		main = new Main(filePath);
-		QueueClass<String> queue = main.constructQueue(filePath);
-		
-		Assert.assertTrue(queue.getSize()>0);
+		Assert.assertTrue(q.getSize()>0);
 	}
 }
