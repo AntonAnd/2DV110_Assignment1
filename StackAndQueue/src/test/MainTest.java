@@ -51,7 +51,12 @@ public class MainTest {
 		queue = mock(QueueClass.class);
 		
 		Tree<String> tree = main.constructTree(queue);
-		
 		verify(queue).getSize();
+	}
+	
+	@Test
+	public void testGetTreeNotNull(){
+		Tree<String> tree = main.constructTree(q);
+		Assert.assertTrue(tree.size()>1);
 	}
 }

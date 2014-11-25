@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class Main {
 	private Tree<String> tree;
+	private Stack<TreeNode<String>> stack;
 
 	public static void main(String[] args) {
 		
@@ -19,6 +20,7 @@ public class Main {
 		}
 		else{
 			constructQueue(file);
+	
 		}
 	}
 
@@ -46,8 +48,15 @@ public class Main {
 	}
 	
 	public Tree<String> constructTree(QueueClass<String> queue){
+		
+		stack = new Stack<TreeNode<String>>();
+		TreeNode<String> childNode;
+		TreeNode<String> parentNode;
+		TreeNode<String> rootNode = new TreeNode<>("root");
+		tree = new Tree<String>(rootNode);
+		
 		while (queue.getSize() > 1) {	
-
+			queue.dequeue();
 		}
 		return tree;
 	}
