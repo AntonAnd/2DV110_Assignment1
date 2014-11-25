@@ -72,5 +72,6 @@ public class Main {
 	}
 
 	public void printTree(Tree<String> jsonTree) {
+		jsonTree.printTree();
 	}
 }
