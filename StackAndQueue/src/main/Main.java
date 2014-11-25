@@ -70,4 +70,7 @@ public class Main {
 
 		return tree;
 	}
+
+	public void printTree(Tree<String> jsonTree) {
+	}
 }

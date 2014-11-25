@@ -2,6 +2,7 @@ package test;
 
 
 
+import main.TreeNode;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +14,10 @@ import org.mockito.MockitoAnnotations;
 import main.Main;
 import main.QueueClass;
 import main.Tree;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.mockito.Mockito.*;
 
 
@@ -56,5 +61,17 @@ public class MainTest {
 	public void testGetTreeNotNull(){
 		Tree<String> tree = main.constructTree(q);
 		Assert.assertTrue(tree.size()>1);
+	}
+
+	@Test
+	public void testPrintTree() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		main = new Main("src/jsonTextFileShort");
+		q = main.constructQueue("src/jsonTextFileShort");
+		Tree<String> tree = main.constructTree(q);
+		main.printTree(tree);
+		Assert.assertEquals("root\r\n  {\r\n    \"menu\"\r\n    :\r\n    \"test\"\r\n", outContent.toString());
+		System.setOut(null);
 	}
 }
