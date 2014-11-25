@@ -93,4 +93,8 @@ public class TreeNode<E> {
 		}
 		return false;
 	}
+	
+	public String toString(){
+		return null;
+	}
 }

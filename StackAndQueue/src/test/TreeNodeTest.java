@@ -73,4 +73,10 @@ public class TreeNodeTest<E> {
 		Assert.assertTrue(primitiveData.isJsonPrimitive());
 	}
 	
+	@Test
+	public void testToString(){
+		String expected = "test";
+		Assert.assertEquals(expected, nodeWithData.getData());
+	}
+	
 }
