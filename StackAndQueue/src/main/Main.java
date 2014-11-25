@@ -7,7 +7,9 @@ public class Main {
 	}
 
 	public Main(String file){
-		
+		if(file == null){
+			throw new NullPointerException();
+		}
 	}
 
 	
