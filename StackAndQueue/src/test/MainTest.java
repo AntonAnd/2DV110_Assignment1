@@ -20,7 +20,7 @@ public class MainTest {
 	@Test
 	public void testconstructQueue(){
 		main = new Main("C:\\Users\\Anton\\Documents\\json.txt");
-		QueueClass q = main.constructQueue("C:\\Users\\Anton\\Documents\\json.txt");
+		QueueClass<String> q = main.constructQueue("C:\\Users\\Anton\\Documents\\json.txt");
 		Assert.assertNotNull(q);
 	}
 }

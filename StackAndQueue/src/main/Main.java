@@ -17,6 +17,7 @@ public class Main {
 
 	
 	public QueueClass<String> constructQueue(String jsonFileName){
-		return null;
+		QueueClass<String> queue = new QueueClass<String>();
+		return queue;
 	}
 }
