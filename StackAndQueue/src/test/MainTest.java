@@ -11,6 +11,7 @@ import main.QueueClass;
 
 public class MainTest {
 	private Main main;
+	private String filePath = "C:\\Users\\Anton\\Documents\\json.txt";
 
 	@Test(expected = NullPointerException.class)
 	public void testConstructor(){
@@ -19,8 +20,8 @@ public class MainTest {
 	
 	@Test
 	public void testconstructQueue(){
-		main = new Main("C:\\Users\\Anton\\Documents\\json.txt");
-		QueueClass<String> q = main.constructQueue("C:\\Users\\Anton\\Documents\\json.txt");
+		main = new Main(filePath);
+		QueueClass<String> q = main.constructQueue(filePath);
 		Assert.assertNotNull(q);
 	}
 }
